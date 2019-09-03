@@ -7,11 +7,11 @@ class MergeSort : public Sort {
     public:
         MergeSort(int *elements, size_t size) : Sort(elements, size) {}
 
-        void execute() {
-            // TODO
+        void execute() override {
+
         }
 
-        inline string name() { return "MergeSort"; }
+        inline string name() override { return "MergeSort"; }
 };
 
 #endif
