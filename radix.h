@@ -13,8 +13,10 @@ class RadixSort : public Sort {
             bool sorted = false;
 
             int largest = 0;
-            for (int i = 0;i < size;i++) {
-                if (elements[i] > largest) {
+            for (int i = 0;i < size;i++)
+            {
+                if (elements[i] > largest)
+                {
                     largest = elements[i];
                 }
             }
@@ -24,16 +26,20 @@ class RadixSort : public Sort {
                 vector<int> bucket(10, 0);
                 vector<int> tmp_v(size, 0);
 
-                for (int i=0; i<size; i++) {
+                for (int i=0; i<size; i++)
+                {
                     bucket[ elements[i] / n % 10 ] += 1;
                 }
-                for (int i=1; i<bucket.size(); i++) {
+                for (int i=1; i<bucket.size(); i++)
+                {
                     bucket[i] += bucket[i-1];
                 }
-                for (int i=size-1; i>=0; --i) {
+                for (int i=size-1; i>=0; --i)
+                {
                     tmp_v[ --bucket[elements[i] / n % 10]] = elements[i];
                 }
-                for (int i=0; i<size; i++) {
+                for (int i=0; i<size; i++)
+                {
                     elements[i] = tmp_v[i];
                 }
                 n *= 10;
